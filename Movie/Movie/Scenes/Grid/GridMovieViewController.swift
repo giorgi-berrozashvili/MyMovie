@@ -7,6 +7,7 @@
 
 import UIKit
 import NotificationBannerSwift
+import Alamofire
 
 class GridMovieViewController: UIViewController {
     private let filterSegmentControl: UISegmentedControl = {
@@ -40,8 +41,7 @@ class GridMovieViewController: UIViewController {
         self.configureLayout()
         self.collectionView.reloadData()
         
-        let banner = NotificationBanner(title: "title", subtitle: "subtitle", style: .success)
-        banner.show()
+        
     }
     
     private func configureLayout() {
