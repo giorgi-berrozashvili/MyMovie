@@ -1,11 +1,11 @@
 //
-//  JsonUrlBuilder.swift
+//  DataUrlBuilder.swift
 //  Movie
 //
 //  Created by Giorgi Berozashvili on 26.06.21.
 //
 
-class JsonURLBuilder: URLBuilder {
+class DataURLBuilder: URLBuilder {
     private(set) var urlString: String
     
     init() {
