@@ -13,7 +13,7 @@ class ImageURLBuilder: URLBuilder {
     }
     
     func withBaseUrl() -> Self {
-        self.urlString = APIBaseUrl.imageBaseUrl.string
+        self.urlString = APIBaseUrl.imageBaseUrl.rawValue
         return self
     }
     

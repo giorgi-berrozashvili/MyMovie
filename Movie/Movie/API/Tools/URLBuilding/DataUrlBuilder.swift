@@ -13,7 +13,7 @@ class DataURLBuilder: URLBuilder {
     }
     
     func withBaseUrl() -> Self {
-        self.urlString = APIBaseUrl.dataBaseUrl.string
+        self.urlString = APIBaseUrl.dataBaseUrl.rawValue
         return self
     }
     
