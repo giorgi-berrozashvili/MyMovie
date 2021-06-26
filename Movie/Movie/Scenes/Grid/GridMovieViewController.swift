@@ -7,6 +7,7 @@
 
 import UIKit
 import NotificationBannerSwift
+import SDWebImage
 
 class GridMovieViewController: UIViewController {
     var gridPresenter: GridMoviePresenter!

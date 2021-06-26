@@ -78,6 +78,7 @@ class MovieManager {
         guard let posterId = movie?.posterPath,
               let backdropId = movie?.backdropPath else { return }
         
+        
         DispatchQueue.global(qos: .background).sync {
             self.imageGateway.getImage(by: posterId) { [weak self] response in
                 if case let .success(posterResult) = response {

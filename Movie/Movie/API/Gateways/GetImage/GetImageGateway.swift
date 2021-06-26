@@ -21,6 +21,7 @@ class GetImageGatewayImplementation: GetImageGateway {
             .withIdentifier(identifier)
             .urlString
         
+        
         AF.request(url).response { response in
             switch response.result {
             case .success(let result):

@@ -4,6 +4,6 @@
 target 'Movie' do
 pod 'Alamofire', '~> 5.2'
 pod 'NotificationBannerSwift'
-
+pod 'SDWebImage', :modular_headers => true
 
 end
