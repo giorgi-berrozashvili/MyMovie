@@ -5,7 +5,7 @@
 //  Created by Giorgi Berozashvili on 26.06.21.
 //
 
-enum UrlInstrument {
+enum APIBaseUrl {
     case dataBaseUrl
     case imageBaseUrl
     
@@ -15,14 +15,6 @@ enum UrlInstrument {
             return "https://api.themoviedb.org/3/"
         case .imageBaseUrl:
             return "https://image.tmdb.org/t/p/"
-//        case .resourceType(let type):
-//            switch type {
-//            case .json(let requestType):
-//                return requestType.rawValue
-//            case .image:
-//                return "w500/"
-//            }
-//        }
         }
     }
 }
@@ -36,6 +28,10 @@ enum APIRequestType: String {
     case discover
     case find
     case search
-    
-    
+}
+
+enum APIImageSize: String {
+    case w300
+    case w400
+    case w500
 }

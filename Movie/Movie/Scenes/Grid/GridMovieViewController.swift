@@ -33,6 +33,7 @@ class GridMovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "GridMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "view")
