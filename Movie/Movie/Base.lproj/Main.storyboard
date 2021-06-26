@@ -1,24 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GCT-5L-6Kz">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Zf0-uM-qpm">
+            <objects>
+                <navigationController id="GCT-5L-6Kz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UOf-Ul-r0e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8UN-WQ-Iko"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HBR-ft-J4H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1756" y="34"/>
+        </scene>
+        <!--Launch View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LaunchViewController" customModule="Movie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" My Movie " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpv-4j-3lQ">
+                                <rect key="frame" x="15.5" y="144" width="344" height="88.5"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="70"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video-camera-png" translatesAutoresizingMaskIntoConstraints="NO" id="e5T-Fk-avl">
+                                <rect key="frame" x="187.5" y="80" width="0.0" height="0.0"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="0.10000000000000001" id="ApT-1b-BkZ"/>
+                                    <constraint firstAttribute="width" secondItem="e5T-Fk-avl" secondAttribute="height" multiplier="1:1" id="DGy-gh-5wa"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dan-xQ-T91">
+                                <rect key="frame" x="187.5" y="188" width="0.0" height="0.5"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dan-xQ-T91" secondAttribute="height" multiplier="1:1" id="b3x-8l-rsy"/>
+                                    <constraint firstAttribute="width" constant="0.10000000000000001" id="na6-XE-K35"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e5T-Fk-avl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MHe-90-XD3"/>
+                            <constraint firstItem="e5T-Fk-avl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="80" id="Ths-wt-pne"/>
+                            <constraint firstItem="dan-xQ-T91" firstAttribute="centerY" secondItem="qpv-4j-3lQ" secondAttribute="centerY" id="ddG-i5-CBU"/>
+                            <constraint firstItem="dan-xQ-T91" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g1c-OQ-XuM"/>
+                            <constraint firstItem="qpv-4j-3lQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="ieD-oP-j27"/>
+                            <constraint firstItem="qpv-4j-3lQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ssJ-cu-pEr"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lOL-Fg-rTT"/>
+                    <connections>
+                        <outlet property="coverView" destination="dan-xQ-T91" id="es9-PY-44F"/>
+                        <outlet property="coverViewWidthConstraint" destination="na6-XE-K35" id="VrJ-1J-kzH"/>
+                        <outlet property="welcomeIconWidthConstraint" destination="ApT-1b-BkZ" id="eTv-lu-Usa"/>
+                        <outlet property="welcomeLabelTopConstraint" destination="ieD-oP-j27" id="gB4-Wa-zKh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-756" y="34"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="video-camera-png" width="361.5" height="398.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
