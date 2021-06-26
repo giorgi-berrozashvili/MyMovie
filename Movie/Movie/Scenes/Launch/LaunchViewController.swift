@@ -35,6 +35,7 @@ class LaunchViewController: UIViewController {
         super.viewDidLoad()
     
         self.hideNavigationBar()
+        MovieManager.shared.FetchMoreMovies()
     }
 
     override func viewDidAppear(_ animated: Bool) {

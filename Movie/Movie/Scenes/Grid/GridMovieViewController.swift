@@ -7,9 +7,10 @@
 
 import UIKit
 import NotificationBannerSwift
-import Alamofire
 
 class GridMovieViewController: UIViewController {
+    var gridPresenter: GridMoviePresenter!
+    
     private let filterSegmentControl: UISegmentedControl = {
         let segmentControl = UISegmentedControl()
             segmentControl.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +34,6 @@ class GridMovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "GridMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "view")
@@ -41,11 +41,6 @@ class GridMovieViewController: UIViewController {
         self.view.addSubview(collectionView)
         self.configureLayout()
         self.collectionView.reloadData()
-        
-        GetMoviesGatewayImplementation().getMovies(on: 1, completion: { response in
-            let x = response
-        })
-        
         
     }
     
@@ -85,6 +80,15 @@ extension GridMovieViewController: UICollectionViewDelegateFlowLayout {
             size = size * 2
         }
         return .init(width: size, height: size)
+    }
+}
+
+extension GridMovieViewController: Configurable {
+    static func configured() -> GridMovieViewController {
+        let controller = GridMovieViewController()
+        let configurator = GridMovieConfiguratorImplementation()
+            configurator.configure(controller)
+        return controller
     }
 }
 

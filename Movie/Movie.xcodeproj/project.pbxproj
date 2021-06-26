@@ -12,6 +12,14 @@
 		7C53E1AD2687483E00AEBDBB /* MovieResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1AC2687483E00AEBDBB /* MovieResultEntity.swift */; };
 		7C53E1B12687496000AEBDBB /* MovieInformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1B02687496000AEBDBB /* MovieInformable.swift */; };
 		7C53E1B726874D5100AEBDBB /* GetImageGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1B626874D5100AEBDBB /* GetImageGateway.swift */; };
+		7C53E1BE268752FE00AEBDBB /* GridMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1BD268752FE00AEBDBB /* GridMoviePresenter.swift */; };
+		7C53E1C22687531700AEBDBB /* GridMovieConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1C12687531700AEBDBB /* GridMovieConfigurator.swift */; };
+		7C53E1C7268753D300AEBDBB /* GridMovieRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1C6268753D300AEBDBB /* GridMovieRouter.swift */; };
+		7C53E1CC2687549C00AEBDBB /* UIViewControllerConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1CB2687549C00AEBDBB /* UIViewControllerConfigurable.swift */; };
+		7C53E1D4268756E800AEBDBB /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1D3268756E800AEBDBB /* MovieManager.swift */; };
+		7C53E1D9268759BB00AEBDBB /* MovieImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1D8268759BB00AEBDBB /* MovieImageEntity.swift */; };
+		7C53E1DE26875C9900AEBDBB /* MovieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1DD26875C9900AEBDBB /* MovieStore.swift */; };
+		7C53E1E226875FD700AEBDBB /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53E1E126875FD700AEBDBB /* ApplicationManager.swift */; };
 		7C5B9E1126825F2D002107E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B9E1026825F2D002107E5 /* AppDelegate.swift */; };
 		7C5B9E1326825F2D002107E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B9E1226825F2D002107E5 /* SceneDelegate.swift */; };
 		7C5B9E1526825F2D002107E5 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5B9E1426825F2D002107E5 /* LaunchViewController.swift */; };
@@ -37,6 +45,14 @@
 		7C53E1AC2687483E00AEBDBB /* MovieResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResultEntity.swift; sourceTree = "<group>"; };
 		7C53E1B02687496000AEBDBB /* MovieInformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInformable.swift; sourceTree = "<group>"; };
 		7C53E1B626874D5100AEBDBB /* GetImageGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageGateway.swift; sourceTree = "<group>"; };
+		7C53E1BD268752FE00AEBDBB /* GridMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMoviePresenter.swift; sourceTree = "<group>"; };
+		7C53E1C12687531700AEBDBB /* GridMovieConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMovieConfigurator.swift; sourceTree = "<group>"; };
+		7C53E1C6268753D300AEBDBB /* GridMovieRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMovieRouter.swift; sourceTree = "<group>"; };
+		7C53E1CB2687549C00AEBDBB /* UIViewControllerConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerConfigurable.swift; sourceTree = "<group>"; };
+		7C53E1D3268756E800AEBDBB /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
+		7C53E1D8268759BB00AEBDBB /* MovieImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImageEntity.swift; sourceTree = "<group>"; };
+		7C53E1DD26875C9900AEBDBB /* MovieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStore.swift; sourceTree = "<group>"; };
+		7C53E1E126875FD700AEBDBB /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		7C5B9E0D26825F2D002107E5 /* Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5B9E1026825F2D002107E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C5B9E1226825F2D002107E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +91,7 @@
 			children = (
 				7C53E1A5268742AA00AEBDBB /* MovieEntity.swift */,
 				7C53E1AC2687483E00AEBDBB /* MovieResultEntity.swift */,
+				7C53E1D8268759BB00AEBDBB /* MovieImageEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -93,6 +110,48 @@
 				7C53E1B626874D5100AEBDBB /* GetImageGateway.swift */,
 			);
 			path = GetImage;
+			sourceTree = "<group>";
+		};
+		7C53E1BB268752CC00AEBDBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C53E1BC268752E100AEBDBB /* Grid */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7C53E1BC268752E100AEBDBB /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				7CD5A30E2687144B008A10C2 /* CollectionViewCells */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
+		7C53E1C92687547400AEBDBB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7C53E1CB2687549C00AEBDBB /* UIViewControllerConfigurable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7C53E1D1268756D100AEBDBB /* Managment */ = {
+			isa = PBXGroup;
+			children = (
+				7C53E1E126875FD700AEBDBB /* ApplicationManager.swift */,
+				7C53E1D2268756DB00AEBDBB /* ServiceDataManagement */,
+			);
+			path = Managment;
+			sourceTree = "<group>";
+		};
+		7C53E1D2268756DB00AEBDBB /* ServiceDataManagement */ = {
+			isa = PBXGroup;
+			children = (
+				7C53E1D3268756E800AEBDBB /* MovieManager.swift */,
+				7C53E1DD26875C9900AEBDBB /* MovieStore.swift */,
+			);
+			path = ServiceDataManagement;
 			sourceTree = "<group>";
 		};
 		7C5B9E0426825F2D002107E5 = {
@@ -117,8 +176,10 @@
 			isa = PBXGroup;
 			children = (
 				7CCAD2D5268738B200EFBE9B /* Miscelaneous */,
+				7C53E1D1268756D100AEBDBB /* Managment */,
 				7CB6BE952687251D00C576E2 /* API */,
 				7CD5A31926871823008A10C2 /* Scenes */,
+				7C53E1BB268752CC00AEBDBB /* Views */,
 				7C5B9E1026825F2D002107E5 /* AppDelegate.swift */,
 				7C5B9E1226825F2D002107E5 /* SceneDelegate.swift */,
 				7C5B9E1626825F2D002107E5 /* Main.storyboard */,
@@ -134,7 +195,6 @@
 			children = (
 				7C53E1AF2687493500AEBDBB /* InformationVault */,
 				7CB6BE99268727A400C576E2 /* Tools */,
-				7CB6BE982687279C00C576E2 /* Persistance */,
 				7C53E1A42687428B00AEBDBB /* Entities */,
 				7CB6BE962687252200C576E2 /* Gateways */,
 			);
@@ -148,13 +208,6 @@
 				7C53E1B526874D4100AEBDBB /* GetImage */,
 			);
 			path = Gateways;
-			sourceTree = "<group>";
-		};
-		7CB6BE982687279C00C576E2 /* Persistance */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Persistance;
 			sourceTree = "<group>";
 		};
 		7CB6BE99268727A400C576E2 /* Tools */ = {
@@ -179,6 +232,7 @@
 		7CCAD2D5268738B200EFBE9B /* Miscelaneous */ = {
 			isa = PBXGroup;
 			children = (
+				7C53E1C92687547400AEBDBB /* Helpers */,
 				7CCAD2D6268738BB00EFBE9B /* Settings */,
 			);
 			path = Miscelaneous;
@@ -212,18 +266,12 @@
 		7CD5A3092687110A008A10C2 /* Grid */ = {
 			isa = PBXGroup;
 			children = (
-				7CD5A30D26871443008A10C2 /* View */,
 				7CD5A30A2687112E008A10C2 /* GridMovieViewController.swift */,
+				7C53E1BD268752FE00AEBDBB /* GridMoviePresenter.swift */,
+				7C53E1C12687531700AEBDBB /* GridMovieConfigurator.swift */,
+				7C53E1C6268753D300AEBDBB /* GridMovieRouter.swift */,
 			);
 			path = Grid;
-			sourceTree = "<group>";
-		};
-		7CD5A30D26871443008A10C2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7CD5A30E2687144B008A10C2 /* CollectionViewCells */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		7CD5A30E2687144B008A10C2 /* CollectionViewCells */ = {
@@ -358,6 +406,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C53E1CC2687549C00AEBDBB /* UIViewControllerConfigurable.swift in Sources */,
+				7C53E1D9268759BB00AEBDBB /* MovieImageEntity.swift in Sources */,
 				7C5B9E1526825F2D002107E5 /* LaunchViewController.swift in Sources */,
 				7C53E1B12687496000AEBDBB /* MovieInformable.swift in Sources */,
 				7C5B9E1126825F2D002107E5 /* AppDelegate.swift in Sources */,
@@ -365,6 +415,7 @@
 				7CCAD2DC26873BF800EFBE9B /* DataUrlBuilder.swift in Sources */,
 				7C53E1B726874D5100AEBDBB /* GetImageGateway.swift in Sources */,
 				7CD5A30B2687112E008A10C2 /* GridMovieViewController.swift in Sources */,
+				7C53E1C22687531700AEBDBB /* GridMovieConfigurator.swift in Sources */,
 				7CB6BE9B268727C300C576E2 /* UrlBuilder.swift in Sources */,
 				7CCAD2E42687421C00EFBE9B /* GetMoviesGateway.swift in Sources */,
 				7C5B9E1326825F2D002107E5 /* SceneDelegate.swift in Sources */,
@@ -372,7 +423,12 @@
 				7C53E1A6268742AA00AEBDBB /* MovieEntity.swift in Sources */,
 				7CB6BE9F268728C400C576E2 /* UrlInstruments.swift in Sources */,
 				7CCAD2D8268738C600EFBE9B /* ApiKey.swift in Sources */,
+				7C53E1D4268756E800AEBDBB /* MovieManager.swift in Sources */,
+				7C53E1E226875FD700AEBDBB /* ApplicationManager.swift in Sources */,
+				7C53E1C7268753D300AEBDBB /* GridMovieRouter.swift in Sources */,
+				7C53E1BE268752FE00AEBDBB /* GridMoviePresenter.swift in Sources */,
 				7CD5A31626871484008A10C2 /* GridMovieCollectionViewCell.swift in Sources */,
+				7C53E1DE26875C9900AEBDBB /* MovieStore.swift in Sources */,
 				7CCAD2DF26873C1400EFBE9B /* ImageUrlBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
