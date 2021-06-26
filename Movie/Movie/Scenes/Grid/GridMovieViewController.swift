@@ -42,6 +42,10 @@ class GridMovieViewController: UIViewController {
         self.configureLayout()
         self.collectionView.reloadData()
         
+        GetMoviesGatewayImplementation().getMovies(on: 1, completion: { response in
+            let x = response
+        })
+        
         
     }
     
