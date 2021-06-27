@@ -10,11 +10,9 @@ import Foundation
 class MovieStore {
     static let shared: MovieStore = MovieStore()
     private var fetchedMovies: [Int: MovieEntity]
-    private var fetchedImages: [Int: MovieImageEntity]
     
     private init() {
         fetchedMovies = [:]
-        fetchedImages = [:]
     }
     
     func addMovies(_ movies: [MovieEntity]) {
@@ -23,18 +21,6 @@ class MovieStore {
                 fetchedMovies[id] = $0
             }
         }
-    }
-    
-    func getAllImageData() -> [MovieImageEntity] {
-        return Array(fetchedImages.values)
-    }
-    
-    func getImageForMovie(id: Int) -> MovieImageEntity? {
-        return self.fetchedImages[id]
-    }
-    
-    func setImageForMovie(id: Int, image: MovieImageEntity) {
-        self.fetchedImages[id] = image
     }
     
     func getAllMovies() -> [MovieEntity] {

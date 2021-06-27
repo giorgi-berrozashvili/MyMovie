@@ -30,10 +30,10 @@ extension GridMoviePresenterImplementation: GridMoviePresenter {
     }
     
     func numberOfSections() -> Int {
-        
+        return 1
     }
     
     func numberOfItems(in section: Int) -> Int {
-        
+        return 2
     }
 }

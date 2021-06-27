@@ -22,6 +22,7 @@ struct GridMoviePopuparDataProvider: GridMovieDataProvider {
                 isFavourite: false,
                 title: $0.title,
                 rating: $0.voteAverage,
+                releaseDate: $0.releaseDate,
                 posterPath: $0.posterPath,
                 backdropPath: $0.backdropPath
             )}
@@ -39,6 +40,7 @@ struct GridMovieTopRatedDataProvider: GridMovieDataProvider {
                 isFavourite: false,
                 title: $0.title,
                 rating: $0.voteAverage,
+                releaseDate: $0.releaseDate,
                 posterPath: $0.posterPath,
                 backdropPath: $0.backdropPath
             )}
@@ -47,6 +49,6 @@ struct GridMovieTopRatedDataProvider: GridMovieDataProvider {
 
 struct GridMovieFavouriteDataProvider: GridMovieDataProvider {
     func getData() -> [MovieEntityModel] {
-        <#code#>
+        return []
     }
 }

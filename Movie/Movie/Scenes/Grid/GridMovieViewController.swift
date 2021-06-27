@@ -54,7 +54,7 @@ class GridMovieViewController: UIViewController {
         
         self.collectionView.reloadData()
         
-        
+ 
     }
     
     private func configureUI() {
@@ -132,7 +132,7 @@ extension GridMovieViewController: UICollectionViewDelegate, UICollectionViewDat
         }
         if let view = view as? GridMovieCollectionViewCell {
            
-            view.configure(with: url)
+            
         }
         
         return view
