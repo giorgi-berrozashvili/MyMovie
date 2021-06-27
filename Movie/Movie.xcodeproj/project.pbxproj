@@ -56,7 +56,6 @@
 		7CCFCB25268874F700D19A26 /* ModelEntityMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFCB24268874F700D19A26 /* ModelEntityMappable.swift */; };
 		7CCFCB2826887C7200D19A26 /* DeleteFavouriteMovieGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFCB2726887C7200D19A26 /* DeleteFavouriteMovieGateway.swift */; };
 		7CCFCB2E2688C66200D19A26 /* UIViewControllerNavigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFCB2D2688C66200D19A26 /* UIViewControllerNavigable.swift */; };
-		7CCFCB322688CB4900D19A26 /* main-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CCFCB312688CB4800D19A26 /* main-icon.png */; };
 		7CD5A30B2687112E008A10C2 /* GridMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD5A30A2687112E008A10C2 /* GridMovieViewController.swift */; };
 		7CD5A31626871484008A10C2 /* GridMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD5A31426871484008A10C2 /* GridMovieCollectionViewCell.swift */; };
 		7CD5A31726871484008A10C2 /* GridMovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD5A31526871484008A10C2 /* GridMovieCollectionViewCell.xib */; };
@@ -115,7 +114,6 @@
 		7CCFCB24268874F700D19A26 /* ModelEntityMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEntityMappable.swift; sourceTree = "<group>"; };
 		7CCFCB2726887C7200D19A26 /* DeleteFavouriteMovieGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFavouriteMovieGateway.swift; sourceTree = "<group>"; };
 		7CCFCB2D2688C66200D19A26 /* UIViewControllerNavigable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerNavigable.swift; sourceTree = "<group>"; };
-		7CCFCB312688CB4800D19A26 /* main-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-icon.png"; path = "../../../../../../main-icon.png"; sourceTree = "<group>"; };
 		7CD5A30A2687112E008A10C2 /* GridMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMovieViewController.swift; sourceTree = "<group>"; };
 		7CD5A31426871484008A10C2 /* GridMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CD5A31526871484008A10C2 /* GridMovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridMovieCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 				7C5B9E1626825F2D002107E5 /* Main.storyboard */,
 				7C5B9E1C26825F2E002107E5 /* Assets.xcassets */,
 				7C5B9E2126825F2E002107E5 /* Info.plist */,
-				7CCFCB312688CB4800D19A26 /* main-icon.png */,
 				7C5B9E1926825F2D002107E5 /* Movie.xcdatamodeld */,
 			);
 			path = Movie;
@@ -515,7 +512,6 @@
 				7CD5A31726871484008A10C2 /* GridMovieCollectionViewCell.xib in Resources */,
 				7C5B9E1D26825F2E002107E5 /* Assets.xcassets in Resources */,
 				7C5B9E1826825F2D002107E5 /* Main.storyboard in Resources */,
-				7CCFCB322688CB4900D19A26 /* main-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
