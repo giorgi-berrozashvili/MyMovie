@@ -10,9 +10,7 @@ import UIKit
 class LaunchViewController: UIViewController {
 
     @IBOutlet weak var welcomeLabelTopConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var welcomeIconWidthConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var coverViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var coverView: UIView!
     
@@ -26,23 +24,31 @@ class LaunchViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
-        welcomeLabelTopConstraint.constant = 240
-        welcomeIconWidthConstraint.constant = 160
-        UIView.animate(withDuration: 1, animations: {
-            self.view.layoutIfNeeded()
-        }, completion: { _ in
-            self.coverViewWidthConstraint.constant = 2000
-            
-            UIView.animate(withDuration: 0.8, animations: {
-                self.view.layoutIfNeeded()
-                self.coverView.layer.cornerRadius = self.coverView.frame.height / 2
+        UIView.animateKeyframes(
+            withDuration: 2,
+            delay: 0,
+            options: .calculationModeCubic,
+            animations: {
                 
-            }, completion: { _ in
-                self.navigationController?.pushViewController(GridMovieViewController.configured(with: nil), animated: false)
+                self.welcomeLabelTopConstraint.constant = 260
+                self.welcomeIconWidthConstraint.constant = 180
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.6) {
+                    self.view.layoutIfNeeded()
+                }
                 
-            })
-        })
+                self.coverViewWidthConstraint.constant = 2000
+                UIView.addKeyframe(withRelativeStartTime: 0.7, relativeDuration: 0.3) {
+                    self.view.layoutIfNeeded()
+                    self.coverView.layer.cornerRadius = self.coverView.frame.height / 2
+                }
+            },
+            completion: { _ in
+                self.navigationController?.pushViewController(
+                    GridMovieViewController.configured(with: nil),
+                    animated: false
+                )
+            }
+        )
     }
 
 }
