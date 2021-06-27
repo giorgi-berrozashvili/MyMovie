@@ -30,6 +30,5 @@ class ApplicationManager {
         movieManager.FetchMoreMovies()
         movieManager.FetchMoreMovies()
         movieManager.FetchMoreMovies()
-        movieManager.synchronizeImageData()
     }
 }

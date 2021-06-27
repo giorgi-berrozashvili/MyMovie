@@ -13,7 +13,7 @@
         <scene sceneID="Zf0-uM-qpm">
             <objects>
                 <navigationController id="GCT-5L-6Kz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UOf-Ul-r0e">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UOf-Ul-r0e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -30,11 +30,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LaunchViewController" customModule="Movie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" My Movie " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpv-4j-3lQ">
-                                <rect key="frame" x="15.5" y="144" width="344" height="88.5"/>
+                                <rect key="frame" x="15.5" y="100" width="344" height="88.5"/>
                                 <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="70"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dan-xQ-T91">
-                                <rect key="frame" x="187.5" y="188" width="0.0" height="0.5"/>
+                                <rect key="frame" x="187.5" y="144" width="0.0" height="0.5"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dan-xQ-T91" secondAttribute="height" multiplier="1:1" id="b3x-8l-rsy"/>

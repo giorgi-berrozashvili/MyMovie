@@ -5,8 +5,6 @@
 //  Created by Giorgi Berozashvili on 26.06.21.
 //
 
-import Foundation
-
 protocol MovieInformable: AnyObject {
     var discoveredMovieAmount: Int { get set }
     var discoveredMoviePagesAmount: Int { get set }

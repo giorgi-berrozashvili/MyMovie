@@ -17,19 +17,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="127" height="121"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video-camera-png" translatesAutoresizingMaskIntoConstraints="NO" id="ExL-hF-Ntb">
-                        <rect key="frame" x="0.0" y="0.0" width="127" height="121"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video-camera-png" translatesAutoresizingMaskIntoConstraints="NO" id="ExL-hF-Ntb">
+                        <rect key="frame" x="2" y="2" width="123" height="117"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="ExL-hF-Ntb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ELv-kk-p6q"/>
-                <constraint firstAttribute="trailing" secondItem="ExL-hF-Ntb" secondAttribute="trailing" id="QxS-jn-6mU"/>
-                <constraint firstItem="ExL-hF-Ntb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xF6-3f-Og9"/>
-                <constraint firstAttribute="bottom" secondItem="ExL-hF-Ntb" secondAttribute="bottom" id="zAO-Hw-pBX"/>
+                <constraint firstItem="ExL-hF-Ntb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="ELv-kk-p6q"/>
+                <constraint firstAttribute="trailing" secondItem="ExL-hF-Ntb" secondAttribute="trailing" constant="2" id="QxS-jn-6mU"/>
+                <constraint firstItem="ExL-hF-Ntb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="xF6-3f-Og9"/>
+                <constraint firstAttribute="bottom" secondItem="ExL-hF-Ntb" secondAttribute="bottom" constant="2" id="zAO-Hw-pBX"/>
             </constraints>
             <size key="customSize" width="127" height="121"/>
+            <connections>
+                <outlet property="imageView" destination="ExL-hF-Ntb" id="pzA-58-uCq"/>
+            </connections>
             <point key="canvasLocation" x="97.826086956521749" y="131.58482142857142"/>
         </collectionViewCell>
     </objects>
