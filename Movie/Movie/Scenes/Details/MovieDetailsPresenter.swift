@@ -9,6 +9,7 @@ import Foundation
 
 protocol MovieDetailsPresenter {
     func viewDidLoad()
+    func getTitle() -> String?
     func getBackdropImageString() -> String
     func getPosterModel() -> PosterView.Model
     func getTripleLabelModel() -> TripleLabelView.Model
@@ -43,6 +44,10 @@ extension MovieDetailsPresenterImplementation: MovieDetailsPresenter {
             showModelInvalidityError()
             return
         }
+    }
+    
+    func getTitle() -> String? {
+        return movieEntityModel.title
     }
     
     func getBackdropImageString() -> String {

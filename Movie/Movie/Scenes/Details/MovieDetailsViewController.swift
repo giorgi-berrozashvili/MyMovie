@@ -46,6 +46,13 @@ final class MovieDetailsViewController: UIViewController {
         configureHierarchy()
         configureLayout()
         configureFavouriteButton()
+        configureTitle()
+        
+        presenter.viewDidLoad()
+    }
+    
+    private func configureTitle() {
+        self.set(title: presenter.getTitle() ?? "", color: .white)
     }
     
     private func configureUI() {
@@ -136,3 +143,5 @@ extension MovieDetailsViewController: PosterViewDelegate {
         self.presenter.didTapFavouriteButton()
     }
 }
+
+extension MovieDetailsViewController: ViewControllerNavigable { }

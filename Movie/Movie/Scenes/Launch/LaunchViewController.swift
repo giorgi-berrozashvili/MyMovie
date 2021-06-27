@@ -27,8 +27,8 @@ class LaunchViewController: UIViewController {
         super.viewDidAppear(animated)
         
         
-        welcomeLabelTopConstraint.constant = 200
-        welcomeIconWidthConstraint.constant = 120
+        welcomeLabelTopConstraint.constant = 240
+        welcomeIconWidthConstraint.constant = 160
         UIView.animate(withDuration: 1, animations: {
             self.view.layoutIfNeeded()
         }, completion: { _ in

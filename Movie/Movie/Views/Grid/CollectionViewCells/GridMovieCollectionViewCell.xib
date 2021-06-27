@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="127" height="121"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video-camera-png" translatesAutoresizingMaskIntoConstraints="NO" id="ExL-hF-Ntb">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie-grid-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ExL-hF-Ntb">
                         <rect key="frame" x="2" y="2" width="123" height="117"/>
                     </imageView>
                 </subviews>
@@ -37,6 +37,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="video-camera-png" width="361.5" height="398.5"/>
+        <image name="movie-grid-placeholder" width="960" height="540"/>
     </resources>
 </document>

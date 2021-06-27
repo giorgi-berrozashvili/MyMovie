@@ -45,7 +45,12 @@ final class GridMovieViewController: UIViewController {
         return collection
     }()
     
-    let view2 = UIView()
+    private let coverView: UIView = {
+        let view = UIView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1)
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,25 +65,16 @@ final class GridMovieViewController: UIViewController {
         synchronize()
         self.gridPresenter.viewDidLoad()
         
-        
-        view2.translatesAutoresizingMaskIntoConstraints = false
-        view2.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1)
-        self.view.addSubview(view2)
-        
-        view2.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        view2.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        view2.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        view2.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        
+        configureCoverView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        UIView.animate(withDuration: 0.2, animations: {
-            self.view2.alpha = 0.4
+        UIView.animate(withDuration: 0.7, animations: {
+            self.coverView.alpha = 0
         }, completion: { _ in
-            self.view2.removeFromSuperview()
+            self.coverView.removeFromSuperview()
         })
     }
     
@@ -154,6 +150,15 @@ final class GridMovieViewController: UIViewController {
     
     private func synchronize() {
         MovieManager.shared.synchronizeFavouriteMovies()
+    }
+    
+    private func configureCoverView() {
+        self.view.addSubview(coverView)
+        
+        coverView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        coverView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        coverView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        coverView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
 }
 
