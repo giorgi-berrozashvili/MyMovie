@@ -8,16 +8,16 @@
 ## Screens
 
 #### Popular movies
-![This is a alt text.](/popular.png)
+![This is a alt text.](/images/popular.png)
 
 #### Top rated movies
-![This is a alt text.](/topRated.png)
+![This is a alt text.](/images/topRated.png)
 
 #### Favourite movies
-![This is a alt text.](/favourite.png)
+![This is a alt text.](/images/favourite.png)
 
 #### Detail screen
-![This is a alt text.](/details.png)
+![This is a alt text.](/images/details.png)
 
 
 ## Used 3rd party libraries
