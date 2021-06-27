@@ -22,6 +22,7 @@ struct MovieEntity: Codable {
     let video: Bool?
     let voteAverage: Double?
     let voteCount: Int?
+    var isFavourite: Bool = false
     
     enum CodingKeys: String, CodingKey {
         case adult = "adult"
@@ -38,5 +39,19 @@ struct MovieEntity: Codable {
         case video = "video"
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
+    }
+    
+    func toEntityModel() -> MovieEntityModel {
+        return MovieEntityModel(
+            id: id,
+            isFavourite: isFavourite,
+            title: title,
+            rating: voteAverage,
+            popularity: popularity,
+            overview: overview,
+            releaseDate: releaseDate,
+            posterPath: posterPath,
+            backdropPath: backdropPath
+        )
     }
 }

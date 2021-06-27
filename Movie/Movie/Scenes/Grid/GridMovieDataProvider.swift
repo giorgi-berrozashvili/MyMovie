@@ -17,15 +17,6 @@ struct GridMoviePopuparDataProvider: GridMovieDataProvider {
             .shared
             .getAllMovies()
             .sorted(by: { $0.popularity ?? 0.0 > $1.popularity ?? 0.0 })
-            .map { MovieEntityModel(
-                id: $0.id,
-                isFavourite: false,
-                title: $0.title,
-                rating: $0.voteAverage,
-                releaseDate: $0.releaseDate,
-                posterPath: $0.posterPath,
-                backdropPath: $0.backdropPath
-            )}
     }
 }
 
@@ -34,21 +25,21 @@ struct GridMovieTopRatedDataProvider: GridMovieDataProvider {
         MovieStore
             .shared
             .getAllMovies()
-            .sorted(by: { $0.voteAverage ?? 0.0 > $1.voteAverage ?? 0.0 })
-            .map { MovieEntityModel(
-                id: $0.id,
-                isFavourite: false,
-                title: $0.title,
-                rating: $0.voteAverage,
-                releaseDate: $0.releaseDate,
-                posterPath: $0.posterPath,
-                backdropPath: $0.backdropPath
-            )}
+            .sorted(by: { $0.rating ?? 0.0 > $1.rating ?? 0.0 })
     }
 }
 
 struct GridMovieFavouriteDataProvider: GridMovieDataProvider {
     func getData() -> [MovieEntityModel] {
-        return []
+        MovieStore
+            .shared
+            .getAllMovies()
+            .filter { $0.isFavourite }
     }
+}
+
+enum MovieFilterType: Int {
+    case popular = 0
+    case topRated = 1
+    case favourite = 2
 }

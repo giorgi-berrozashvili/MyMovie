@@ -10,7 +10,7 @@ import UIKit
 struct ColorLibrary {
     struct Welcome {
         static let applicationWelcomeLabelColor = #colorLiteral(red: 0.6, green: 0.2, blue: 1, alpha: 1)
-        static let applicationLogoTintColor = #colorLiteral(red: 0.4308167358, green: 0.2, blue: 1, alpha: 1)
+        static let applicationLogoTintColor = #colorLiteral(red: 0.431372549, green: 0.2, blue: 1, alpha: 1)
         static let applicationSplashingViewColor = #colorLiteral(red: 0.4308167358, green: 0.2, blue: 1, alpha: 1)
     }
     

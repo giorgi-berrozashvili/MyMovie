@@ -6,7 +6,7 @@
 //
 
 protocol GridMovieRouter {
-    func navigateToMovieDetails(with movieEntity: Any)
+    func navigateToMovieDetails(with movieEntity: MovieEntityModel)
 }
 
 class GridMovieRouterImplementation: GridMovieRouter {
@@ -16,8 +16,8 @@ class GridMovieRouterImplementation: GridMovieRouter {
         self.view = view
     }
     
-    func navigateToMovieDetails(with movieEntity: Any) {
-        let controller = MovieDetailsViewController.configured()
+    func navigateToMovieDetails(with movieEntity: MovieEntityModel) {
+        let controller = MovieDetailsViewController.configured(with: movieEntity)
         self.view?.push(controller: controller)
     }
 }

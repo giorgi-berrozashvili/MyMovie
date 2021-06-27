@@ -9,8 +9,8 @@ import Foundation
 
 extension TripleLabelView {
     struct Model {
-        let title: String
-        let description: String
-        let additional: String
+        let title: String?
+        let description: String?
+        let additional: String?
     }
 }

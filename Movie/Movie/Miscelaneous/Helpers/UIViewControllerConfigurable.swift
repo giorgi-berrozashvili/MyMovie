@@ -6,6 +6,6 @@
 //
 
 protocol Configurable {
-    associatedtype ControllerType = Self
-    static func configured() -> ControllerType
+    associatedtype TransferData
+    static func configured(with data: TransferData?) -> Self
 }

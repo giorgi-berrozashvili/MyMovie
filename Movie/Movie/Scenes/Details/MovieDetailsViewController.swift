@@ -6,30 +6,31 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 protocol MovieDetailsView: AnyObject {
-    
+    func notify(message: String, description: String, type: BannerStyle)
+    func notifyGeneralError()
+    func refreshPosterView()
 }
 
-class MovieDetailsViewController: UIViewController {
-    
+final class MovieDetailsViewController: UIViewController {
     private let coverView: UIImageView = {
         let imageView = UIImageView()
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.contentMode = .redraw
             imageView.alpha = 0.84
-        imageView.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/w400/yImmxRokQ48PD49ughXdpKTAsAU.jpg"), completed: nil)
         return imageView
     }()
     
     private let posterView: PosterView = {
-        let posterView = PosterView(with: .init(imageUrl: "https://image.tmdb.org/t/p/w500/kTQ3J8oTTKofAVLYnds2cHUz9KO.jpg", ratingText: "8.7 / 10", favouriteIconName: "star-filled"))
+        let posterView = PosterView()
             posterView.translatesAutoresizingMaskIntoConstraints = false
         return posterView
     }()
     
     private let tripleLabelView: TripleLabelView = {
-        let tripleLabelView = TripleLabelView(with: .init(title: "Rambo", description: "To rekindle their marriages, best friends-turned-in-laws Shanthi and Jennifer plan a couples' getaway. But it comes with all kinds of surprises.", additional: "Release date: August 6, 2009"))
+        let tripleLabelView = TripleLabelView()
             tripleLabelView.translatesAutoresizingMaskIntoConstraints = false
         return tripleLabelView
     }()
@@ -39,12 +40,27 @@ class MovieDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureUI()
+        configureViews()
+        configureNavigationBar()
         configureHierarchy()
         configureLayout()
+        configureFavouriteButton()
+    }
+    
+    private func configureUI() {
         self.view.backgroundColor = .white
-        
+    }
+    
+    private func configureNavigationBar() {
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
         self.navigationController?.navigationBar.tintColor = UIColor.white
+    }
+    
+    private func configureViews() {
+        coverView.sd_setImage(with: URL(string: presenter.getBackdropImageString()), completed: nil)
+        posterView.configure(with: presenter.getPosterModel())
+        tripleLabelView.configure(with: presenter.getTripleLabelModel())
     }
     
     private func configureHierarchy() {
@@ -72,13 +88,51 @@ class MovieDetailsViewController: UIViewController {
             tripleLabelView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -Spacing.XS)
         ])
     }
+    
+    private func configureFavouriteButton() {
+        self.posterView.delegate = self
+    }
 }
 
 extension MovieDetailsViewController: Configurable {
-    static func configured() -> MovieDetailsViewController {
+    static func configured(with data: MovieEntityModel?) -> MovieDetailsViewController {
         let controller = MovieDetailsViewController()
         let configurator = MovieDetailsConfiguratorImplementation()
-            configurator.configure(controller)
+        configurator.configure(controller, model: data)
         return controller
+    }
+}
+
+extension MovieDetailsViewController: MovieDetailsView {
+    func notify(message: String, description: String, type: BannerStyle) {
+        DispatchQueue.main.async {
+            NotificationBanner(
+                title: message,
+                subtitle: description,
+                style: type
+            ).show()
+        }
+    }
+    
+    func notifyGeneralError() {
+        DispatchQueue.main.async {
+            NotificationBanner(
+                title: "Error occurred",
+                subtitle: "Sorry for inconvenience",
+                style: .danger
+            ).show()
+        }
+    }
+    
+    func refreshPosterView() {
+        DispatchQueue.main.async {
+            self.posterView.configure(with: self.presenter.getPosterModel())
+        }
+    }
+}
+
+extension MovieDetailsViewController: PosterViewDelegate {
+    func posterView(_ posterView: PosterView, didTapButton button: UIButton) {
+        self.presenter.didTapFavouriteButton()
     }
 }

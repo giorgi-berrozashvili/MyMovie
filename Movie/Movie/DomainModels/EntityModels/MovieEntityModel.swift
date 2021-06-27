@@ -10,6 +10,8 @@ struct MovieEntityModel: ModelEntityValidable {
     var isFavourite: Bool
     let title: String?
     let rating: Double?
+    let popularity: Double?
+    let overview: String?
     let releaseDate: String?
     let posterPath: String?
     let backdropPath: String?
@@ -18,6 +20,8 @@ struct MovieEntityModel: ModelEntityValidable {
         return [id != nil,
                 title != nil,
                 rating != nil,
+                popularity != nil,
+                overview != nil,
                 releaseDate != nil,
                 posterPath != nil,
                 backdropPath != nil].allSatisfy { $0 }
@@ -31,6 +35,8 @@ extension MovieEntityModel: ModelEntityMappable {
             isFavourite: dictionary["isFavourite"] as? Bool ?? false,
             title: dictionary["title"] as? String,
             rating: dictionary["rating"] as? Double,
+            popularity: dictionary["popularity"] as? Double,
+            overview: dictionary["overview"] as? String,
             releaseDate: dictionary["releaseDate"] as? String,
             posterPath: dictionary["posterPath"] as? String,
             backdropPath: dictionary["backdropPath"] as? String
@@ -43,6 +49,8 @@ extension MovieEntityModel: ModelEntityMappable {
             "isFavourite": isFavourite,
             "title": title,
             "rating": rating,
+            "popularity": popularity,
+            "overview": overview,
             "releaseDate": releaseDate,
             "posterPath": posterPath,
             "backdropPath": backdropPath

@@ -33,7 +33,7 @@ class DeleteFavouriteMovieGatewayImplementation: DeleteFavouriteMovieGateway {
         DispatchQueue.global(qos: .background).async {
             do {
                 let objects = try context.fetch(movieRequest)
-                objects.forEach { if $0.id == id { context.delete($0) } }
+                objects.forEach { if $0.id == id { $0.isFavourite = false } }
                 try context.save()
                 completion(nil)
             } catch let error as NSError {

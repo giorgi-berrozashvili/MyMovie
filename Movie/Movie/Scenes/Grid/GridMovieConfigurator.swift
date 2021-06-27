@@ -12,7 +12,12 @@ protocol GridMovieConfigurator {
 class GridMovieConfiguratorImplementation: GridMovieConfigurator {
     func configure(_ controller: GridMovieViewController) {
         let router = GridMovieRouterImplementation(view: controller)
-        let presenter = GridMoviePresenterImplementation(view: controller, router: router)
+        let dataProvider = GridMoviePopuparDataProvider()
+        let presenter = GridMoviePresenterImplementation(
+            view: controller,
+            router: router,
+            dataProvider: dataProvider
+        )
         controller.gridPresenter = presenter
     }
 }

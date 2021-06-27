@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PosterViewDelegate: AnyObject {
+    func posterView(_ posterView: PosterView, didTapButton button: UIButton)
+}
+
 class PosterView: UIView {
     private typealias Color = ColorLibrary.MovieDetails
     
@@ -15,6 +19,8 @@ class PosterView: UIView {
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.contentMode = .redraw
             imageView.clipsToBounds = true
+            imageView.layer.borderWidth = 8
+            imageView.layer.borderColor = UIColor.white.cgColor
         return imageView
     }()
     
@@ -42,11 +48,14 @@ class PosterView: UIView {
         return button
     }()
     
+    weak var delegate: PosterViewDelegate?
+    
     init() {
         super.init(frame: .zero)
         
         configureHierarchy()
         configureLayout()
+        configureFavouriteButton()
     }
     
     convenience init(with model: Model) {
@@ -102,5 +111,15 @@ class PosterView: UIView {
             favouriteButton.widthAnchor.constraint(equalToConstant: 40),
             favouriteButton.heightAnchor.constraint(equalTo: favouriteButton.widthAnchor),
         ])
+    }
+    
+    private func configureFavouriteButton() {
+        self.favouriteButton.addTarget(self,
+                                       action: #selector(didTapFavouriteButton(_:)),
+                                       for: .touchUpInside)
+    }
+    
+    @objc private func didTapFavouriteButton(_ sender: UIButton) {
+        self.delegate?.posterView(self, didTapButton: sender)
     }
 }

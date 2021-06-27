@@ -12,12 +12,9 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
-    private let applicationManager: ApplicationManager = .shared
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        applicationManager.start()
+        ApplicationManager.shared.context = persistentContainer.viewContext
         
         return true
     }

@@ -33,13 +33,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" My Movie " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpv-4j-3lQ">
-                                <rect key="frame" x="15.5" y="100" width="344" height="88.5"/>
-                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" My Movies " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpv-4j-3lQ">
+                                <rect key="frame" x="29" y="100" width="317" height="76"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="60"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video-camera-png" translatesAutoresizingMaskIntoConstraints="NO" id="e5T-Fk-avl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-icon" translatesAutoresizingMaskIntoConstraints="NO" id="e5T-Fk-avl">
                                 <rect key="frame" x="187.5" y="80" width="0.0" height="0.0"/>
                                 <color key="tintColor" systemColor="systemIndigoColor"/>
                                 <constraints>
@@ -48,7 +48,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dan-xQ-T91">
-                                <rect key="frame" x="187.5" y="144" width="0.0" height="0.5"/>
+                                <rect key="frame" x="187.5" y="138" width="0.0" height="0.0"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dan-xQ-T91" secondAttribute="height" multiplier="1:1" id="b3x-8l-rsy"/>
@@ -81,7 +81,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="video-camera-png" width="361.5" height="398.5"/>
+        <image name="main-icon" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

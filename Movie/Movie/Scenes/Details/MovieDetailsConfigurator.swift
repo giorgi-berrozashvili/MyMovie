@@ -6,12 +6,22 @@
 //
 
 protocol MovieDetailsConfigurator {
-    func configure(_ controller: MovieDetailsViewController)
+    func configure(_ controller: MovieDetailsViewController, model: MovieEntityModel?)
 }
 
 class MovieDetailsConfiguratorImplementation: MovieDetailsConfigurator {
-    func configure(_ controller: MovieDetailsViewController) {
-        let presenter = MovieDetailsPresenterImplementation()
+    func configure(_ controller: MovieDetailsViewController, model: MovieEntityModel?) {
+        let saveFavouriteGateway = SaveFavouriteMovieGatewayImplementation()
+        let deleteFavouriteGateway = DeleteFavouriteMovieGatewayImplementation()
+        let router = MovieDetailsRouterImplementation()
+        
+        let presenter = MovieDetailsPresenterImplementation(
+            view: controller,
+            router: router,
+            saveFavouriteGateway: saveFavouriteGateway,
+            deleteFavouriteGateway: deleteFavouriteGateway,
+            movieEntityModel: model
+        )
         controller.presenter = presenter
     }
 }

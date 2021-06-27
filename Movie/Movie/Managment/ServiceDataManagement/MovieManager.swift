@@ -30,7 +30,8 @@ class MovieManager {
                 
                 switch response {
                 case .success(let result):
-                    self.movieStore.addMovies(result)
+                    self.movieStore.addMovies(result.results.map { $0.toEntityModel() })
+                    self.copyMovieDetails(from: result)
                 case .failure(let error):
                     self.serviceErrorMessage = error.localizedDescription
                 }
@@ -38,7 +39,7 @@ class MovieManager {
         }
     }
     
-    func FetchMoreMovies() {
+    func FetchMoreMovies(completion: (() -> ())? = nil) {
         self.lastFetchedPage += 1
         
         DispatchQueue.global(qos: .background).sync {
@@ -47,13 +48,29 @@ class MovieManager {
                 
                 switch response {
                 case .success(let result):
-                    self.movieStore.addMovies(result)
+                    self.movieStore.addMovies(result.results.map { $0.toEntityModel() })
+                    self.copyMovieDetails(from: result)
                     self.lastFetchedPage += 1
+                    completion?()
                 case .failure(let error):
                     self.serviceErrorMessage = error.localizedDescription
                 }
             }
         }
+    }
+    
+    func synchronizeFavouriteMovies() {
+        let favourites = FavouriteMovieStore.shared.getAllMovies()
+        movieStore.addMovies(favourites)
+    }
+    
+    func getErrorMessageIfExists() -> String? {
+        return serviceErrorMessage
+    }
+
+    private func copyMovieDetails(from result: MovieResultEntity) {
+        self.discoveredMovieAmount = result.totalResults ?? 0
+        self.discoveredMoviePagesAmount = result.totalPages ?? 0
     }
 }
 

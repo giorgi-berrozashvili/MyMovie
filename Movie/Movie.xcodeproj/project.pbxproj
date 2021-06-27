@@ -57,6 +57,7 @@
 		7CCFCB222688718800D19A26 /* SaveFavouriteMovieGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFCB212688718800D19A26 /* SaveFavouriteMovieGateway.swift */; };
 		7CCFCB25268874F700D19A26 /* ModelEntityMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFCB24268874F700D19A26 /* ModelEntityMappable.swift */; };
 		7CCFCB2826887C7200D19A26 /* DeleteFavouriteMovieGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFCB2726887C7200D19A26 /* DeleteFavouriteMovieGateway.swift */; };
+		7CCFCB2E2688C66200D19A26 /* UIViewControllerNavigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCFCB2D2688C66200D19A26 /* UIViewControllerNavigable.swift */; };
 		7CD5A30B2687112E008A10C2 /* GridMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD5A30A2687112E008A10C2 /* GridMovieViewController.swift */; };
 		7CD5A31626871484008A10C2 /* GridMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD5A31426871484008A10C2 /* GridMovieCollectionViewCell.swift */; };
 		7CD5A31726871484008A10C2 /* GridMovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CD5A31526871484008A10C2 /* GridMovieCollectionViewCell.xib */; };
@@ -116,6 +117,7 @@
 		7CCFCB212688718800D19A26 /* SaveFavouriteMovieGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFavouriteMovieGateway.swift; sourceTree = "<group>"; };
 		7CCFCB24268874F700D19A26 /* ModelEntityMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEntityMappable.swift; sourceTree = "<group>"; };
 		7CCFCB2726887C7200D19A26 /* DeleteFavouriteMovieGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFavouriteMovieGateway.swift; sourceTree = "<group>"; };
+		7CCFCB2D2688C66200D19A26 /* UIViewControllerNavigable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerNavigable.swift; sourceTree = "<group>"; };
 		7CD5A30A2687112E008A10C2 /* GridMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMovieViewController.swift; sourceTree = "<group>"; };
 		7CD5A31426871484008A10C2 /* GridMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CD5A31526871484008A10C2 /* GridMovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GridMovieCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -146,16 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				7C0C10182687868A004C896F /* Colors */,
-				7C0C101726878685004C896F /* Images */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		7C0C101726878685004C896F /* Images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		7C0C10182687868A004C896F /* Colors */ = {
@@ -282,6 +276,7 @@
 			children = (
 				7C53E1CB2687549C00AEBDBB /* UIViewControllerConfigurable.swift */,
 				7C29B29926884ACB005F63C5 /* UtilMethods.swift */,
+				7CCFCB2D2688C66200D19A26 /* UIViewControllerNavigable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -604,6 +599,7 @@
 				7C29B2812688395C005F63C5 /* MovieDetailsConfigurator.swift in Sources */,
 				7C29B297268840B4005F63C5 /* PosterModel.swift in Sources */,
 				7C0C1014268774D8004C896F /* Spacing.swift in Sources */,
+				7CCFCB2E2688C66200D19A26 /* UIViewControllerNavigable.swift in Sources */,
 				7C29B27B26883946005F63C5 /* MovieDetailsViewController.swift in Sources */,
 				7CCFCB1026886D5C00D19A26 /* FavouriteMovieManager.swift in Sources */,
 				7C29B28926883BB5005F63C5 /* TripleLabelView.swift in Sources */,
@@ -770,7 +766,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bero.Movie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -789,7 +785,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Bero.Movie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

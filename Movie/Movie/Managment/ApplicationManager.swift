@@ -11,15 +11,22 @@ import CoreData
 class ApplicationManager {
     static let shared: ApplicationManager = ApplicationManager()
     
-    let context: NSManagedObjectContext?
+    var context: NSManagedObjectContext? {
+        didSet {
+            self.start()
+        }
+    }
+    
     private let movieManager: MovieManager
+    private let favouriteMovieManager: FavouriteMovieManager
     
     private init() {
         movieManager = .shared
-        self.context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+        favouriteMovieManager = .shared
     }
     
-    func start() {
+    private func start() {
         movieManager.FetchInitialMovies()
+        favouriteMovieManager.FetchInitialFavouriteMovies()
     }
 }
