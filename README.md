@@ -6,6 +6,26 @@
 #### It has no financial value and is not presented in AppStore
 
 
+## Modules
+
+#### Application consists of several separated sub-modules
+
+* API
+    - Service calls with standard gateways
+    - Persistence data manipulation 
+    - URL building using [Builder Pattern](https://en.wikipedia.org/wiki/Builder_pattern)
+* Management
+    - The main [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) classes for service and persistence data fetching and manipulating
+* Scenes
+    - Launch view controller for splashing animation
+    - Grid view controller and its MVP
+    - Details view controller and its MVP
+* Helper views
+    - Collection views
+    - Details helper views with [delegates](https://en.wikipedia.org/wiki/Delegation_pattern) to communicate with high level views
+* Miscelaneous groups
+    - Separated classes for utility, library and other various purposes 
+
 
 ## Screens
 
