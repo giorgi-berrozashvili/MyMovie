@@ -19,6 +19,7 @@
 * Scenes
     - Launch view controller for splashing animation
     - Grid view controller and its MVP
+        - Grid MVP also contains data provider class that fetches data according to users request with [Strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern)
     - Details view controller and its MVP
 * Helper views
     - Collection views
