@@ -5,6 +5,7 @@
 //  Created by Giorgi Berozashvili on 26.06.21.
 //
 
+// MARK: - grid presenter declaration
 protocol GridMoviePresenter {
     func viewDidLoad()
     func userDidReachEnd()
@@ -19,17 +20,22 @@ protocol GridMoviePresenter {
                      at index: Int) -> (width: Double, height: Double)
 }
 
+// MARK: - grid presenter implementation
 class GridMoviePresenterImplementation {
-    weak var view: GridMovieView?
+    // MARK: - properties
     let router: GridMovieRouter
-    var dataProvider: GridMovieDataProvider {
+    
+    // MARK: - private properties
+    private weak var view: GridMovieView?
+    private var movieCollectionDataSource: [CollectionCellModel] = []
+    private var dataProvider: GridMovieDataProvider {
         didSet {
             prepareCollectionDataSource()
             self.view?.prepareCollection()
         }
     }
-    var movieCollectionDataSource: [CollectionCellModel] = []
     
+    // MARK: - initialization
     init(view: GridMovieView,
          router: GridMovieRouter,
          dataProvider: GridMovieDataProvider) {
@@ -40,6 +46,7 @@ class GridMoviePresenterImplementation {
     }
 }
 
+// MARK: - grid presenter implementation
 extension GridMoviePresenterImplementation: GridMoviePresenter {
     func viewDidLoad() {
         if let error = getServiceErrorIfExists() {
@@ -54,8 +61,10 @@ extension GridMoviePresenterImplementation: GridMoviePresenter {
     
     func userDidReachEnd() {
         MovieManager.shared.FetchMoreMovies { [weak self] in
-            self?.prepareCollectionDataSource()
-            self?.view?.prepareCollection()
+            MovieManager.shared.FetchMoreMovies { [weak self] in
+                self?.prepareCollectionDataSource()
+                self?.view?.prepareCollection()
+            }
         }
     }
     
@@ -109,6 +118,7 @@ extension GridMoviePresenterImplementation: GridMoviePresenter {
     }
 }
 
+// MARK: - helper methods for implementation
 extension GridMoviePresenterImplementation {
     private func prepareCollectionDataSource() {
         movieCollectionDataSource = dataProvider

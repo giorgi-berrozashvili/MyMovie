@@ -8,13 +8,16 @@
 import UIKit
 import NotificationBannerSwift
 
+// MARK: - movie details view declaration
 protocol MovieDetailsView: AnyObject {
     func notify(message: String, description: String, type: BannerStyle)
     func notifyGeneralError()
     func refreshPosterView()
 }
 
+// MARK: - movie details view implementation
 final class MovieDetailsViewController: UIViewController {
+    // MARK: - private properties
     private let coverView: UIImageView = {
         let imageView = UIImageView()
             imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,8 +38,10 @@ final class MovieDetailsViewController: UIViewController {
         return tripleLabelView
     }()
     
+    // MARK: - public properties
     var presenter: MovieDetailsPresenter!
     
+    // MARK: - view life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +56,7 @@ final class MovieDetailsViewController: UIViewController {
         presenter.viewDidLoad()
     }
     
+    // MARK: - private helpers
     private func configureTitle() {
         self.set(title: presenter.getTitle() ?? "", color: .white)
     }
@@ -101,15 +107,7 @@ final class MovieDetailsViewController: UIViewController {
     }
 }
 
-extension MovieDetailsViewController: Configurable {
-    static func configured(with data: MovieEntityModel?) -> MovieDetailsViewController {
-        let controller = MovieDetailsViewController()
-        let configurator = MovieDetailsConfiguratorImplementation()
-        configurator.configure(controller, model: data)
-        return controller
-    }
-}
-
+// MARK: - movie details implementation
 extension MovieDetailsViewController: MovieDetailsView {
     func notify(message: String, description: String, type: BannerStyle) {
         DispatchQueue.main.async {
@@ -138,10 +136,22 @@ extension MovieDetailsViewController: MovieDetailsView {
     }
 }
 
+// MARK: - configurable implementation
+extension MovieDetailsViewController: Configurable {
+    static func configured(with data: MovieEntityModel?) -> MovieDetailsViewController {
+        let controller = MovieDetailsViewController()
+        let configurator = MovieDetailsConfiguratorImplementation()
+        configurator.configure(controller, model: data)
+        return controller
+    }
+}
+
+// MARK: - poster view delegate implementation
 extension MovieDetailsViewController: PosterViewDelegate {
     func posterView(_ posterView: PosterView, didTapButton button: UIButton) {
         self.presenter.didTapFavouriteButton()
     }
 }
 
+// MARK: - navigable implementation
 extension MovieDetailsViewController: ViewControllerNavigable { }

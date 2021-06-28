@@ -7,10 +7,12 @@
 
 import Foundation
 
+// MARK: - grid data provider declaration for 3 different tab data fetching
 protocol GridMovieDataProvider {
     func getData() -> [MovieEntityModel]
 }
 
+// MARK: - grid popular movies implementation
 struct GridMoviePopuparDataProvider: GridMovieDataProvider {
     func getData() -> [MovieEntityModel] {
         MovieStore
@@ -20,6 +22,7 @@ struct GridMoviePopuparDataProvider: GridMovieDataProvider {
     }
 }
 
+// MARK: - grid top rated movies implementation
 struct GridMovieTopRatedDataProvider: GridMovieDataProvider {
     func getData() -> [MovieEntityModel] {
         MovieStore
@@ -29,6 +32,7 @@ struct GridMovieTopRatedDataProvider: GridMovieDataProvider {
     }
 }
 
+// MARK: - grid favourite movies implementation
 struct GridMovieFavouriteDataProvider: GridMovieDataProvider {
     func getData() -> [MovieEntityModel] {
         MovieStore
@@ -38,6 +42,7 @@ struct GridMovieFavouriteDataProvider: GridMovieDataProvider {
     }
 }
 
+// MARK: - grid movie type
 enum MovieFilterType: Int {
     case popular = 0
     case topRated = 1

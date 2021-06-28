@@ -7,23 +7,39 @@
 
 import UIKit
 
+// MARK: - launch screen controller declaration
 class LaunchViewController: UIViewController {
 
+    // MARK: - outlets
     @IBOutlet weak var welcomeLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var welcomeIconWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var coverViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var coverView: UIView!
     
+    // MARK: - view life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.hideNavigationBar()
-        MovieManager.shared.FetchMoreMovies()
+        prepareNavigationUI()
+        fetchMoreMoviesForFuture()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        animate()
+    }
+    
+    // MARK: - private helper methods
+    private func prepareNavigationUI() {
+        self.hideNavigationBar()
+    }
+    
+    private func fetchMoreMoviesForFuture() {
+        MovieManager.shared.FetchMoreMovies()
+    }
+    
+    private func animate() {
         UIView.animateKeyframes(
             withDuration: 2,
             delay: 0,
@@ -50,7 +66,7 @@ class LaunchViewController: UIViewController {
             }
         )
     }
-
 }
 
+// MARK: - navigable implementation
 extension LaunchViewController: ViewControllerNavigable { }

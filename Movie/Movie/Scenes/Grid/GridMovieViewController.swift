@@ -9,6 +9,7 @@ import UIKit
 import NotificationBannerSwift
 import SDWebImage
 
+// MARK: - grid view declaration
 protocol GridMovieView: AnyObject {
     func notify(message: String, description: String, type: BannerStyle)
     func notifyGeneralError()
@@ -16,14 +17,18 @@ protocol GridMovieView: AnyObject {
     func prepareCollection()
 }
 
+// MARK: - grid view implementation
 final class GridMovieViewController: UIViewController {
+    // MARK: - typealiases
     private typealias Structure = GridMovieConsts.Structure
     private typealias Metric = GridMovieConsts.Metric
     private typealias Text = GridMovieConsts.Text
     private typealias Color = GridMovieConsts.Color
     
+    // MARK: - properties
     var gridPresenter: GridMoviePresenter!
     
+    // MARK: - private properties
     private let filterSegmentControl: UISegmentedControl = {
         let segmentControl = UISegmentedControl(items: Structure.segmentItems)
             segmentControl.translatesAutoresizingMaskIntoConstraints = false
@@ -52,6 +57,7 @@ final class GridMovieViewController: UIViewController {
         return view
     }()
     
+    // MARK: - view life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,6 +84,7 @@ final class GridMovieViewController: UIViewController {
         })
     }
     
+    // MARK: - private helper methods
     private func configureUI() {
         self.view.backgroundColor = .white
         self.collectionView.backgroundColor = .white
@@ -162,6 +169,7 @@ final class GridMovieViewController: UIViewController {
     }
 }
 
+// MARK: - collection delegate + datasource implementation
 extension GridMovieViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return gridPresenter.numberOfSections()
@@ -192,13 +200,14 @@ extension GridMovieViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+        if (scrollView.contentOffset.y + 300 >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
             
             gridPresenter.userDidReachEnd()
         }
     }
 }
 
+// MARK: - collection flow implementation
 extension GridMovieViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -210,6 +219,7 @@ extension GridMovieViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - grid view implementation
 extension GridMovieViewController: GridMovieView {
     func notify(message: String, description: String, type: BannerStyle) {
         DispatchQueue.main.async {
@@ -242,6 +252,7 @@ extension GridMovieViewController: GridMovieView {
     }
 }
 
+// MARK: - configurable implementation
 extension GridMovieViewController: Configurable {
     
     static func configured(with data: String?) -> GridMovieViewController {
@@ -252,4 +263,5 @@ extension GridMovieViewController: Configurable {
     }
 }
 
+// MARK: - navigable implementation
 extension GridMovieViewController: ViewControllerNavigable { }

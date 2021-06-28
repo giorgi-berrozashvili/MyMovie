@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - movie details presenter declaration
 protocol MovieDetailsPresenter {
     func viewDidLoad()
     func getTitle() -> String?
@@ -16,13 +17,16 @@ protocol MovieDetailsPresenter {
     func didTapFavouriteButton()
 }
 
+// MARK: - movie details presenter implementation
 class MovieDetailsPresenterImplementation {
+    // MARK: - private properties
     private weak var view: MovieDetailsView?
     private let router: MovieDetailsRouter
     private let saveFavouriteGateway: SaveFavouriteMovieGateway
     private let deleteFavouriteGateway: DeleteFavouriteMovieGateway
     private var movieEntityModel: MovieEntityModel!
     
+    // MARK: - initialization
     init(view: MovieDetailsView,
          router: MovieDetailsRouter,
          saveFavouriteGateway: SaveFavouriteMovieGateway,
@@ -37,7 +41,7 @@ class MovieDetailsPresenterImplementation {
     }
 }
 
-
+// MARK: - movie details presenter implementation
 extension MovieDetailsPresenterImplementation: MovieDetailsPresenter {
     func viewDidLoad() {
         if isModelInalid() {
@@ -86,6 +90,7 @@ extension MovieDetailsPresenterImplementation: MovieDetailsPresenter {
     }
 }
 
+// MARK: - movie details helper methods
 extension MovieDetailsPresenterImplementation {
     private func isModelInalid() -> Bool {
         return movieEntityModel == nil || movieEntityModel.isValid() == false
