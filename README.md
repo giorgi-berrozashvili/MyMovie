@@ -5,19 +5,21 @@
 #### Application is for only development and showcase purposes
 #### It has no financial value and is not presented in AppStore
 
+
+
 ## Screens
 
 #### Popular movies
-![This is a alt text.](/images/popular.png)
+<img src="/images/popular.png" width="300">
 
 #### Top rated movies
-![This is a alt text.](/images/topRated.png)
+<img src="/images/topRated.png" width="300">
 
 #### Favourite movies
-![This is a alt text.](/images/favourite.png)
+<img src="/images/favourite.png" width="300">
 
 #### Detail screen
-![This is a alt text.](/images/details.png)
+<img src="/images/details.png" width="300">
 
 
 ## Used 3rd party libraries
